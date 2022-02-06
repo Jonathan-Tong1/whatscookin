@@ -21,30 +21,42 @@
 <body>
     <div class="content-container">
         <!-- Front -->
-        <div class="front-page">
-            <button class="button-long">Login</button>
-            <button onclick="showSurvey('form-box')" class="button-long">Signup
-                <div class="buttons">
-                    <button class="button-short">Sign in with <img src="./img/fb.png"></button>
-                    <button class="button-short">Sign in with <img src="./img/google.png"></button>
+        <div class="wrapper">
+            <div class="front-page">
+                <div class="page-logo"><img src="./img/whatscookin.png" height=200px></div>
+                <button class="button-long">Login</button>
+                <button onclick="showSurvey('form-box')" class="button-long">Signup
+                    <div class="buttons">
+                        <button class="button-short">Sign in with <img class="sign-in-img" src="./img/fb.png"></button>
+                        <button class="button-short">Sign in with <img class="sign-in-img"
+                                src="./img/google.png"></button>
+                    </div>
+            </div>
+            <!-- Form -->
+            <div id="form-box">
+                <div class="form-container">
+                    First Name
+                    <input type="textbox" class="name-text">
+                    Last Name
+                    <input type="textbox" class="name-text">
+                    Please indicate your favourite cuisine.
+                    Cuisine 1
+                    <input type="textbox" class="cuisine-text">
+                    Cuisine 2
+                    <input type="textbox" class="cuisine-text">
+                    Cuisine 3
+                    <input type="textbox" class="cuisine-text">
+                    <input type="textbox" class="">
+                    <input type="textbox">
+                    <input id="address" type="textbox" value="">
+                    <input type="button" value="Submit" onclick="codeAddress()">
                 </div>
+            </div>
         </div>
+
+
     </div>
 
-    <!-- Form -->
-    <div id="form-box">
-        <div class="form-container">
-            <input type="textbox" class="fname-text"> First Name
-            <input type="textbox" class="lname-text"> Last Name
-            <input type="textbox" class="cuisine-text"> Cuisine 1 
-            <input type="textbox" class="cuisine-text"> Cuisine 2
-            <input type="textbox" class="cuisine-text"> Cuisine 3
-            <input type="textbox" class="">
-            <input type="textbox">
-            <input id="address" type="textbox" value="">
-            <input type="button" value="Submit" onclick="codeAddress()">
-        </div>
-    </div>
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgK-v1IoRrx5WPTmIA7FDlwAsYpE1wrXY"></script>
