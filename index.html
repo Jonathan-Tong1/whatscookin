@@ -19,36 +19,31 @@
 </head>
 
 <body>
-
-    <div>
-        <li class="menu-icon"><img src="./logo.png"></li>
-        <li class="menu-item"></li>
-        <li class="menu-item">About Us</li>
-        <li class="menu-item"></li>
-        <li class="menu-item"></li>
+    <div class="content-container">
+        <!-- Front -->
+        <div class="front-page">
+            <button class="button-long">Login</button>
+            <button onclick="showSurvey('form-box')" class="button-long">Signup
+                <div class="buttons">
+                    <button class="button-short">Sign in with <img src="./img/fb.png"></button>
+                    <button class="button-short">Sign in with <img src="./img/google.png"></button>
+                </div>
+        </div>
     </div>
 
     <!-- Form -->
-    <div class="front-page">
-        <div class="button-short"></div>
-        <div class="button-long"></div>
-    </div>
-
-
-    <div class="form-container">
-        <div class="">
-            <input type="textbox" class="fname-text">
-            <input type="textbox" class="lname-text">
-            <input type="textbox" class="-text">
+    <div id="form-box">
+        <div class="form-container">
+            <input type="textbox" class="fname-text"> First Name
+            <input type="textbox" class="lname-text"> Last Name
+            <input type="textbox" class="cuisine-text"> Cuisine 1 
+            <input type="textbox" class="cuisine-text"> Cuisine 2
+            <input type="textbox" class="cuisine-text"> Cuisine 3
             <input type="textbox" class="">
             <input type="textbox">
             <input id="address" type="textbox" value="">
             <input type="button" value="Submit" onclick="codeAddress()">
         </div>
-    </div>
-
-    <div>
-
     </div>
 
 

@@ -34,7 +34,6 @@ function match(lat, lng) {
             i++;
         }
     }
-
 }
 
 function distance(lat1, lng1, lat2, lng2) {

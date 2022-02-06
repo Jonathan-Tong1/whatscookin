@@ -7,3 +7,37 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.front-page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-long {
+    background-color: none;
+    border:none;
+    margin-bottom: 10px;
+    height:50px;
+}
+
+.button-short {
+    width:45%;
+    height:50px;
+}
+
+.buttons {
+    flex-direction: row;
+}
+
+#form-box {
+    display: none;
+    height:100vh;
+    width:100%;
+    background-color: white;
+    z-index: 100;
+}
