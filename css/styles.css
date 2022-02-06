@@ -213,10 +213,30 @@ body {
     margin-right: auto;
     margin-left: auto;
     height: 500px;
+    margin-top:20px;
+    border-radius: 20px;
+}
+
+.match-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .person-card {
-    height:200px;
+    align-items: center;
     width: 200px;
+    height:200px;
     border-radius: 20px;
+    background-color: #FF9F0F;
+    color: white;
+    margin:20px;
+
+}
+
+.person-text {
+    display: inline-block;
+  vertical-align: middle;
+  line-height: 30px;
 }

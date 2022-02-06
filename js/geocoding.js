@@ -1,6 +1,7 @@
 
 const users = [{
     "name": "Brenda",
+    "gender": "female",
     "location": [43.00085106547584, -81.27926717578396],
     "cuisine": ["italian", "japanese", "greek"],
     "preference": ["vegan", "peanut-free"],
@@ -9,14 +10,16 @@ const users = [{
 },
 {
     "name": "Conner",
+    "gender": "male",
     "location": [42.991080519332996, -81.24163941978082],
-    "cuisine": ["spanish", "mediterranean", "greek"],
+    "cuisine": ["hispanic", "mediterranean", "greek"],
     "preference": ["vegan", "peanut-free"],
     "experience": [3],
     "utensils": [2]
 },
 {
     "name": "Sasha",
+    "gender": "other",
     "location": [42.98997398187246, -81.25369863144066],
     "cuisine": ["italian", "chinese", "greek"],
     "preference": ["vegan", "peanut-free"],
@@ -25,6 +28,7 @@ const users = [{
 },
 {
     "name": "Jennifer",
+    "gender": "female",
     "location": [43.004649807775756, -81.26682915324247],
     "cuisine": ["lebanese", "japanese", "greek"],
     "preference": ["vegan", "peanut-free"],
@@ -33,6 +37,7 @@ const users = [{
 },
 {
     "name": "Eric",
+    "gender": "male",
     "location": [43.01979711894438, -81.27749640685002],
     "cuisine": ["italian", "moroccan", "greek"],
     "preference": ["vegan", "peanut-free"],
@@ -41,6 +46,7 @@ const users = [{
 },
 {
     "name": "Frank",
+    "gender": "male",
     "location": [43.02093858081859, -81.27753020056839],
     "cuisine": ["italian", "Thai", "greek"],
     "preference": ["vegan", "peanut-free"],
@@ -112,7 +118,16 @@ function codeAddress() {
             lat = results[0].geometry.location.lat();
             lng = results[0].geometry.location.lng();
             console.log("Success.")
-            findFriends(findPublicLocation(lat, lng));
+            
+            let indices = findFriends(findPublicLocation(lat, lng))
+            console.log(indices);
+            let i = 1;
+            for (x in indices) {
+                document.getElementById("name-"+i).innerHTML = users[indices[x]].name;
+                console.log(users[indices[x]].name);
+                document.getElementById("food-preference"+i).innerHTML = users[indices[x]].cuisine[0];
+                i++;
+            }
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -131,13 +146,6 @@ function findPublicLocation(lat, lng) {
 
     const min = Math.min(...distances);
     const index = distances.indexOf(min);
-    // for (let i = 0; i < 6; i++) {
-    //     if (distances[i] > distances[i + 1]) {
-    //         i++;
-    //     } else {
-    //         index = i;
-    //     }
-    // }
 
     document.getElementById("location").innerHTML = locName[index];
     return index;
@@ -161,23 +169,20 @@ function findFriends(index) {
     let distances2 = [...distances];
     distances2.splice(index1, 1);
     index2 = distances.indexOf(Math.min(...distances2))
-    distances2.splice(index2, 1);
-    index3 = distances.indexOf(Math.min(...distances2))
-    
-    console.log(index1)
-    console.log(index2)
-    console.log(index3)
+    let distances3 = [...distances2];
+    distances3.splice(index2, 1);
+    index3 = distances.indexOf(Math.min(...distances3))
+
+    let indices = [index1, index2, index3]
 
     let friend1 = {lat: users[index1].location[0] , lng: users[index1].location[0]};
     let friend2 = {lat: users[index2].location[0] , lng: users[index2].location[0]};
     let friend3 = {lat: users[index3].location[0] , lng: users[index3].location[0]};
 
-    console.log(friend1);
-    console.log(friend2);
-    console.log(friend3);
-
     let myLatLng = {lat: publicLoc[index][0] , lng: publicLoc[index][1]};
     initMap(myLatLng,friend1,friend2,friend3);
+
+    return indices;
 }
 
 
