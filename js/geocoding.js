@@ -157,8 +157,24 @@ function findFriends(index) {
         i++;
     }
 
-    let friend1 = {lat: publicLoc[index][0] , lng: publicLoc[index][1]};
-    let friend
+    index1 = distances.indexOf(Math.min(...distances))
+    let distances2 = [...distances];
+    distances2.splice(index1, 1);
+    index2 = distances.indexOf(Math.min(...distances2))
+    distances2.splice(index2, 1);
+    index3 = distances.indexOf(Math.min(...distances2))
+    
+    console.log(index1)
+    console.log(index2)
+    console.log(index3)
+
+    let friend1 = {lat: users[index1].location[0] , lng: users[index1].location[0]};
+    let friend2 = {lat: users[index2].location[0] , lng: users[index2].location[0]};
+    let friend3 = {lat: users[index3].location[0] , lng: users[index3].location[0]};
+
+    console.log(friend1);
+    console.log(friend2);
+    console.log(friend3);
 
     let myLatLng = {lat: publicLoc[index][0] , lng: publicLoc[index][1]};
     initMap(myLatLng,friend1,friend2,friend3);
