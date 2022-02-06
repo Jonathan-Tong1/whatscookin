@@ -1,52 +1,60 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WhatsCookin</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
+    <title>WhatsCookin</title>
+    <meta name="description" content="A simple HTML5 Template for new projects.">
+    <meta name="author" content="SitePoint">
 
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
 
 </head>
 
 <body>
 
-    <div> 
+    <div>
         <li class="menu-icon"><img src="./logo.png"></li>
         <li class="menu-item"></li>
         <li class="menu-item">About Us</li>
         <li class="menu-item"></li>
         <li class="menu-item"></li>
-    </div> 
+    </div>
 
     <!-- Form -->
+    <div class="front-page">
+        <div class="button-short"></div>
+        <div class="button-long"></div>
+    </div>
+
+
     <div class="form-container">
         <div class="">
             <input type="textbox" class="fname-text">
             <input type="textbox" class="lname-text">
             <input type="textbox" class="-text">
-            <input type="textbox">
+            <input type="textbox" class="">
             <input type="textbox">
             <input id="address" type="textbox" value="">
-            <input type="button" value="Encode" onclick="codeAddress()">
+            <input type="button" value="Submit" onclick="codeAddress()">
         </div>
     </div>
 
-  <div>
-    
-  </div>
+    <div>
+
+    </div>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgK-v1IoRrx5WPTmIA7FDlwAsYpE1wrXY"></script>
-  <script src="js/geocoding.js"></script>
-  <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgK-v1IoRrx5WPTmIA7FDlwAsYpE1wrXY"></script>
+    <script src="./js/geocoding.js" async></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
