@@ -51,24 +51,30 @@
             <!-- Form -->
             <div id="form-box">
                 <div class="form-container">
-
+                    <div style="font-size: 20px;font-weight: 700;">Register Form</div>
+                    <br>
                     <div class="name-box">
                         <div class="name-text">First Name <br><input type="textbox"></div>
                         <div class="name-text">Last Name <br><input type="textbox"></div>
                     </div>
+
                     <br>
-
                     Email
-                    <div></div>
+                    <input type="textbox">
 
+                    <br>
                     Location
                     <input id="address" type="textbox" value="">
-                    <br>
 
+                    <br>
+                    Do you have any allergies/food preferences.
+                    <input type="textbox" id="preference">
+
+                    <br>
                     Please indicate your favourite cuisines.<br>
                     <div class="cuisine-box">
                         <div class="cuisine-text">
-                            Fist 
+                            Fist
                             <input type="textbox" id="cuisine1">
                         </div>
                         <div class="cuisine-text">
@@ -89,16 +95,21 @@
                     Do you have most of the utensils below? (All - 3, None - 0)
                     <input type="textbox" id="utensil">
 
+                    <img src="./img/utensils.jpg" style="margin-right: auto;
+                    margin-left: auto;margin-top: 10px;" width="200px">
+
                     <br>
-                    <input type="button" class="submit-button" value="Submit" onclick="codeAddress()">
+                    <input type="button" class="submit-button" value="Signup" onclick="codeAddress()">
                 </div>
             </div>
 
             <!-- Results -->
             <div id="results">
-                We found a match!
-                <br>
-                Your location is: <div id="location"></div>
+                <div class="results-container">We found a match!
+                    <br>
+                    Your location is: <div id="location"></div>
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>

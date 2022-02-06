@@ -1,44 +1,168 @@
+
+const users = [{
+    "name": "Brenda",
+    "location": [43.00085106547584, -81.27926717578396],
+    "cuisine": ["italian", "japanese", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [1],
+    "utensils": [3]
+},
+{
+    "name": "Conner",
+    "location": [42.991080519332996, -81.24163941978082],
+    "cuisine": ["spanish", "mediterranean", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [3],
+    "utensils": [2]
+},
+{
+    "name": "Sasha",
+    "location": [42.98997398187246, -81.25369863144066],
+    "cuisine": ["italian", "chinese", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [3],
+    "utensils": [3]
+},
+{
+    "name": "Jennifer",
+    "location": [43.004649807775756, -81.26682915324247],
+    "cuisine": ["lebanese", "japanese", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [1],
+    "utensils": [2]
+},
+{
+    "name": "Eric",
+    "location": [43.01979711894438, -81.27749640685002],
+    "cuisine": ["italian", "moroccan", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [2],
+    "utensils": [3]
+},
+{
+    "name": "Frank",
+    "location": [43.02093858081859, -81.27753020056839],
+    "cuisine": ["italian", "Thai", "greek"],
+    "preference": ["vegan", "peanut-free"],
+    "experience": [0],
+    "utensils": [0]
+}]
+
+const publicLoc = [
+    [42.98880464048201, -81.24839858642186],
+    [42.99749880123185, -81.18325884411269],
+    [42.962355561148826, -81.2970148882916],
+    [42.944211244171655, -81.25258957534575],
+    [42.98038275374684, -81.21529873061996],
+    [43.010250654832184, -81.27629123137179]]
+
+const locName = ['Victoria Park','East Lions Park','Civic Garden','Earl Nichols','Crouch Neighbourhood Resource Centre','Western']
+
+
 var geocoder;
 var map;
 function initialize() {
     geocoder = new google.maps.Geocoder();
-    //var latlng = new google.maps.LatLng(-34.397, 150.644);
-    // var mapOptions = {
-    //     zoom: 8,
-    //     center: latlng
-    // }
-    //map = new google.maps.Map(document.getElementById('map'), mapOptions);
 }
 
 initialize();
 
+function initMap(myLatLng, friend1, friend2, friend3) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: myLatLng,
+    });
+
+    new google.maps.Marker({
+        position: myLatLng,
+        map,
+        title: "Hello World!",
+    });
+
+    new google.maps.Marker({
+        position: friend1,
+        map,
+        title: "Hello World!",
+    });
+
+    new google.maps.Marker({
+        position: friend2,
+        map,
+        title: "Hello World!",
+    });
+
+    new google.maps.Marker({
+        position: friend3,
+        map,
+        title: "Hello World!",
+    });
+}
+
 function codeAddress() {
+    show("results");
     var address = document.getElementById('address').value;
+    var c1 = document.getElementById('cuisine1').value;
+    var c2 = document.getElementById('cuisine2').value;
+    var c3 = document.getElementById('cuisine3').value;
+    var lvl = document.getElementById('cooklvl').value;
+    var utensil = document.getElementById('utensil').value;
+
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == 'OK') {
             lat = results[0].geometry.location.lat();
             lng = results[0].geometry.location.lng();
-            console.log(distance(users[0].user1.location[0],users[0].user1.location[1],lat,lng));
             console.log("Success.")
-            //match(lat, lng);
+            findFriends(findPublicLocation(lat, lng));
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
 }
 
-function match(lat, lng) {
+function findPublicLocation(lat, lng) {
+
     let distances = [];
-    for (let i = 0; i<6; i++) {
-        distance[i] = distance(users[0].user1.location[0],users[0].user1.location[1], publicLoc[0].park1[0],publicLoc[0].park1[1]);
+    let i = 0;
+    for (var x in publicLoc) {
+        distances[i] = distance(publicLoc[x][0], publicLoc[x][1], lat, lng);
+        console.log(distances[i]);
+        i++;
     }
 
-    return Math.min(...distances); //
+    const min = Math.min(...distances);
+    const index = distances.indexOf(min);
+    // for (let i = 0; i < 6; i++) {
+    //     if (distances[i] > distances[i + 1]) {
+    //         i++;
+    //     } else {
+    //         index = i;
+    //     }
+    // }
+
+    document.getElementById("location").innerHTML = locName[index];
+    return index;
 }
 
-const
-    getFirstIndexOfMinValue = array =>
-        array.reduce((r, v, i, a) => v <= a[r] ? r : i, -1);   
+function findFriends(index) {
+
+    let distances = [];
+    let i = 0;
+    let index1;
+    let index2;
+    let index3;
+
+    for (var x in users) {
+        distances[i] = distance(users[x].location[0], users[x].location[1], lat, lng);
+        console.log(distances[i]);
+        i++;
+    }
+
+    let friend1 = {lat: publicLoc[index][0] , lng: publicLoc[index][1]};
+    let friend
+
+    let myLatLng = {lat: publicLoc[index][0] , lng: publicLoc[index][1]};
+    initMap(myLatLng,friend1,friend2,friend3);
+}
 
 
 //distance between two coord
@@ -59,67 +183,3 @@ function distance(lat1, lng1, lat2, lng2) {
     var d = R * c; // Distance in km
     return d;
 }
-
-const users = [{
-    "user1": {
-        "name": "Brenda",
-        "location": [43.00085106547584, -81.27926717578396],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    },
-    "user2": {
-        "name": "Conner",
-        "location": [42.991080519332996, -81.24163941978082],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    },
-    "user3": {
-        "name": "Sasha",
-        "location": [42.98997398187246, -81.25369863144066],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    },
-    "user4": {
-        "name": "Jennifer",
-        "location": [43.004649807775756, -81.26682915324247],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    },
-    "user5": {
-        "name": "Eric",
-        "location": [-100.23123, -100.12312],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    },
-    "user6": {
-        "name": "Frank",
-        "location": [-100.23123, -100.12312],
-        "cuisine": ["italian", "japanese", "greek"],
-        "preference": ["vegan", "peanut-free"],
-        "experience": [3],
-        "utensils": [3]
-    }
-}]
-
-const publicLoc = [{
-    "park1": [42.98880464048201, -81.24839858642186],
-    "park2": [42.99749880123185, -81.18325884411269],
-    "park3": [42.962355561148826, -81.2970148882916],
-    "park4": [42.944211244171655, -81.25258957534575],
-    "park5": [42.98038275374684, -81.21529873061996],
-    "park6": [43.010250654832184, -81.27629123137179],
-}]
-
-
-
-

@@ -188,5 +188,35 @@ body {
 }
 
 #results {
+    position: absolute;
     display: none;
+    height:100%;
+    width:100%;
+    z-index: 3;
+    background-color: white;
+    text-align: center;
+}
+
+.results-container {
+    position: absolute;  
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#location {
+
+}
+
+#map {
+    width:80vw;
+    margin-right: auto;
+    margin-left: auto;
+    height: 500px;
+}
+
+.person-card {
+    height:200px;
+    width: 200px;
+    border-radius: 20px;
 }
