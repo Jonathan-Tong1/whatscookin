@@ -1,7 +1,7 @@
-function showSurvey(element) {
+function show(element) {
     document.getElementById(element).style.display = "block";
 }
 
-function hideSurvey(element) {
+function hide(element) {
     document.getElementById(element).style.display = "none";
 }

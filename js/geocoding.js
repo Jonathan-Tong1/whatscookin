@@ -1,4 +1,3 @@
-//import users from "../users.json";
 var geocoder;
 var map;
 function initialize() {
@@ -38,4 +37,7 @@ function match(lat, lng) {
 
 function distance(lat1, lng1, lat2, lng2) {
 
+}
+
+const users =     
 }

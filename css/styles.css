@@ -6,6 +6,7 @@ html {
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .content-container {
@@ -13,16 +14,25 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(8px);
     height:100vh;
     width: 100%;
+    font-family: 'Inter';
 }
 
 .wrapper {
-    background-color: rgba(0,0,0,0.5);
     height:100%;
     width: 100%;
     position: relative;
+}
+
+.wrapper-white {
+    background-color: rgba(255,255,255,.8);
+    height:80vh;
+    width: 960px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top:50%;
 }
 
 .front-page {
@@ -35,24 +45,52 @@ body {
     flex-direction: column;
 }
 
+.page-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .button-long {
-    background-color: none;
+    background-color: gray;
     border:none;
     margin-bottom: 10px;
     height:50px;
     border-radius: 20px;
+    font-weight: 500;
+    font-family: 'Inter';
+    font-size: 15px;
+    color:white;
 }
 
-.button-short {
-    width:45%;
-    height:50px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 20px;
+.button-long:hover {
+    background-color:
 }
 
 .buttons {
     flex-direction: row;
+    align-items: center;
+}
+
+.button-short {
+    width: 49%;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 15px;
+    color:white;
+    background-color: rgba(20, 20, 20, 1);
+}
+
+.button-text {
+    margin-top: 5px;
+}
+
+.sign-in-img {
+    width: 30px;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 #form-box {
@@ -71,4 +109,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-evenly;
+    bottom:0;
+    margin: 10px 0;
+    
 }

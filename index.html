@@ -16,22 +16,34 @@
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="content-container">
         <!-- Front -->
         <div class="wrapper">
-            <div class="front-page">
-                <div class="page-logo"><img src="./img/whatscookin.png" height=200px></div>
-                <button class="button-long">Login</button>
-                <button onclick="showSurvey('form-box')" class="button-long">Signup
+            <div class="wrapper-white">
+                <div class="front-page">
+                    <div class="page-logo"><img src="./img/whatscookin.png" height=200px></div>
+                    <button class="button-long">Login</button>
+                    <button onclick="show('form-box')" class="button-long" style="background-color: #FF9F0F;">Signup</button>
                     <div class="buttons">
-                        <button class="button-short">Sign in with <img class="sign-in-img" src="./img/fb.png"></button>
-                        <button class="button-short">Sign in with <img class="sign-in-img"
+                        <button class="button-short"><div class="button-text">Login with </div><img class="sign-in-img" src="./img/fb.png"></button>
+                        <button class="button-short"><div class="button-text">Login with </div><img class="sign-in-img"
                                 src="./img/google.png"></button>
                     </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-item">Terms and Services</div>
+                    <div class="footer-item">About Us</div>
+                    <div class="footer-item">Terms and Services</div>
+                    
+                </div>
             </div>
+
             <!-- Form -->
             <div id="form-box">
                 <div class="form-container">
@@ -52,9 +64,12 @@
                     <input type="button" value="Submit" onclick="codeAddress()">
                 </div>
             </div>
+
+            <!-- Results -->
+            <div>
+
+            </div>
         </div>
-
-
     </div>
 
 

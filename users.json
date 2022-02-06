@@ -1,7 +1,9 @@
 { 
     "user1": {
-        "location": [ -100, -100],
+        "location": [ -100.23123 , -100.12312 ],
         "cuisine": ["italian","japanese","greek"],
-        ""
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
     }
 }
