@@ -18,6 +18,7 @@ function codeAddress() {
         if (status == 'OK') {
             lat = results[0].geometry.location.lat();
             lng = results[0].geometry.location.lng();
+            console.log(distance(users[0].user1.location[0],users[0].user1.location[1],lat,lng));
             console.log("Success.")
             //match(lat, lng);
         } else {
@@ -62,7 +63,7 @@ function distance(lat1, lng1, lat2, lng2) {
 const users = [{
     "user1": {
         "name": "Brenda",
-        "location": [-100.23123, -100.12312],
+        "location": [43.00085106547584, -81.27926717578396],
         "cuisine": ["italian", "japanese", "greek"],
         "preference": ["vegan", "peanut-free"],
         "experience": [3],
@@ -70,7 +71,7 @@ const users = [{
     },
     "user2": {
         "name": "Conner",
-        "location": [-100.23123, -100.12312],
+        "location": [42.991080519332996, -81.24163941978082],
         "cuisine": ["italian", "japanese", "greek"],
         "preference": ["vegan", "peanut-free"],
         "experience": [3],
@@ -78,7 +79,7 @@ const users = [{
     },
     "user3": {
         "name": "Sasha",
-        "location": [-100.23123, -100.12312],
+        "location": [42.98997398187246, -81.25369863144066],
         "cuisine": ["italian", "japanese", "greek"],
         "preference": ["vegan", "peanut-free"],
         "experience": [3],
@@ -86,7 +87,7 @@ const users = [{
     },
     "user4": {
         "name": "Jennifer",
-        "location": [-100.23123, -100.12312],
+        "location": [43.004649807775756, -81.26682915324247],
         "cuisine": ["italian", "japanese", "greek"],
         "preference": ["vegan", "peanut-free"],
         "experience": [3],
@@ -120,6 +121,5 @@ const publicLoc = [{
 }]
 
 
-console.log(users[0].user1.location[0]);
 
 
