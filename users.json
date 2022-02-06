@@ -1,0 +1,7 @@
+{ 
+    "user1": {
+        "location": [ -100, -100],
+        "cuisine": ["italian","japanese","greek"],
+        ""
+    }
+}

@@ -18,11 +18,31 @@
 </head>
 
 <body>
-  <!-- your content here... -->
 
-    Hi this is WhatsCookin
+    <div> 
+        <li class="menu-icon"><img src="./logo.png"></li>
+        <li class="menu-item"></li>
+        <li class="menu-item">About Us</li>
+        <li class="menu-item"></li>
+        <li class="menu-item"></li>
+    </div> 
+
+    <!-- Form -->
+    <div class="form-container">
+        <div class="">
+
+        </div>
+    </div>
+
+    <div id="map" style="width: 320px; height: 480px;"></div>
+  <div>
+    <input id="address" type="textbox" value="">
+    <input type="button" value="Encode" onclick="codeAddress()">
+  </div>
 
 
-  <script src="js/scripts.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgK-v1IoRrx5WPTmIA7FDlwAsYpE1wrXY"></script>
+  <script src="js/geocoding.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
