@@ -60,10 +60,13 @@ body {
     font-family: 'Inter';
     font-size: 15px;
     color:white;
+    transition-duration: 200ms;
+    cursor: pointer;
 }
 
 .button-long:hover {
-    background-color:
+    transform: scale(1.05);
+    transition-duration: 200ms;
 }
 
 .buttons {
@@ -81,6 +84,13 @@ body {
     font-size: 15px;
     color:white;
     background-color: rgba(20, 20, 20, 1);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.button-short:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
 }
 
 .button-text {
@@ -94,21 +104,76 @@ body {
 }
 
 #form-box {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    height: 100%;
     display: none;
+    height: 100%;
     width:100%;
     background-color: white;
+    position: absolute;
 }
 
 .form-container {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    width:900px;
+}
+
+.name-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.name-box  input {
+    width: 100%;
+}
+
+.name-text {
+    width:50%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.cuisine-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.cuisine-text {
+    width:33%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.cuisine-box  input {
+    width: 100%;
+}
+
+
+.submit-button {
+    width: 400px;
+    background-color: green;
+    border:none;
+    margin-bottom: 10px;
+    height:50px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: 'Inter';
+    font-size: 15px;
+    color:white;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
 }
 
 .footer {
@@ -120,4 +185,8 @@ body {
     bottom:0;
     margin: 10px 0;
     
+}
+
+#results {
+    display: none;
 }

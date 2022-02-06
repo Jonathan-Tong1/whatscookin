@@ -29,45 +29,76 @@
                 <div class="front-page">
                     <div class="page-logo"><img src="./img/whatscookin.png" height=200px></div>
                     <button class="button-long">Login</button>
-                    <button onclick="show('form-box')" class="button-long" style="background-color: #FF9F0F;">Signup</button>
+                    <button onclick="show('form-box')" class="button-long"
+                        style="background-color: #FF9F0F;">Signup</button>
                     <div class="buttons">
-                        <button class="button-short"><div class="button-text">Login with </div><img class="sign-in-img" src="./img/fb.png"></button>
-                        <button class="button-short"><div class="button-text">Login with </div><img class="sign-in-img"
-                                src="./img/google.png"></button>
+                        <button class="button-short">
+                            <div class="button-text">Login with </div><img class="sign-in-img" src="./img/fb.png">
+                        </button>
+                        <button class="button-short">
+                            <div class="button-text">Login with </div><img class="sign-in-img" src="./img/google.png">
+                        </button>
                     </div>
                 </div>
                 <div class="footer">
                     <div class="footer-item">Terms and Services</div>
                     <div class="footer-item">About Us</div>
-                    <div class="footer-item">Terms and Services</div>
-                    
+                    <div class="footer-item">Privacy Policy</div>
+
                 </div>
             </div>
 
             <!-- Form -->
             <div id="form-box">
                 <div class="form-container">
-                    First Name
-                    <input type="textbox" class="name-text">
-                    Last Name
-                    <input type="textbox" class="name-text">
-                    Please indicate your favourite cuisine.
-                    Cuisine 1
-                    <input type="textbox" class="cuisine-text">
-                    Cuisine 2
-                    <input type="textbox" class="cuisine-text">
-                    Cuisine 3
-                    <input type="textbox" class="cuisine-text">
-                    <input type="textbox" class="">
-                    <input type="textbox">
+
+                    <div class="name-box">
+                        <div class="name-text">First Name <br><input type="textbox"></div>
+                        <div class="name-text">Last Name <br><input type="textbox"></div>
+                    </div>
+                    <br>
+
+                    Email
+                    <div></div>
+
+                    Location
                     <input id="address" type="textbox" value="">
-                    <input type="button" value="Submit" onclick="codeAddress()">
+                    <br>
+
+                    Please indicate your favourite cuisines.<br>
+                    <div class="cuisine-box">
+                        <div class="cuisine-text">
+                            Fist 
+                            <input type="textbox" id="cuisine1">
+                        </div>
+                        <div class="cuisine-text">
+                            Second
+                            <input type="textbox" id="cuisine2">
+                        </div>
+                        <div class="cuisine-text">
+                            Third
+                            <input type="textbox" id="cuisine3">
+                        </div>
+                    </div>
+
+                    <br>
+                    What is your cooking level? (Max - 3, Min - 0)
+                    <input type="textbox" id="cooklvl">
+
+                    <br>
+                    Do you have most of the utensils below? (All - 3, None - 0)
+                    <input type="textbox" id="utensil">
+
+                    <br>
+                    <input type="button" class="submit-button" value="Submit" onclick="codeAddress()">
                 </div>
             </div>
 
             <!-- Results -->
-            <div>
-
+            <div id="results">
+                We found a match!
+                <br>
+                Your location is: <div id="location"></div>
             </div>
         </div>
     </div>

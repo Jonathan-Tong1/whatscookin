@@ -5,5 +5,40 @@
         "preference": ["vegan", "peanut-free"],
         "experience": [3],
         "utensils": [3]
+    },
+    "user2": {
+        "location": [ -100.23123 , -100.12312 ],
+        "cuisine": ["italian","japanese","greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user3": {
+        "location": [ -100.23123 , -100.12312 ],
+        "cuisine": ["italian","japanese","greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user4": {
+        "location": [ -100.23123 , -100.12312 ],
+        "cuisine": ["italian","japanese","greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user5": {
+        "location": [ -100.23123 , -100.12312 ],
+        "cuisine": ["italian","japanese","greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user6": {
+        "location": [ -100.23123 , -100.12312 ],
+        "cuisine": ["italian","japanese","greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
     }
 }

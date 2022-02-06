@@ -27,17 +27,99 @@ function codeAddress() {
 }
 
 function match(lat, lng) {
-    for (let i = 0; i < 10; i++) {
-        userData = JSON.parse(users);
-        if (distance(lat, lng, userData[i].location[0], userData[i].location[1]) > distance(lat, lng, userData[i + 1].location[0], userData[i + 1].location[1])) {
-            i++;
-        }
+    let distances = [];
+    for (let i = 0; i<6; i++) {
+        distance[i] = distance(users[0].user1.location[0],users[0].user1.location[1], publicLoc[0].park1[0],publicLoc[0].park1[1]);
     }
+
+    return Math.min(...distances); //
+}
+
+const
+    getFirstIndexOfMinValue = array =>
+        array.reduce((r, v, i, a) => v <= a[r] ? r : i, -1);   
+
+
+//distance between two coord
+function deg2rad(deg) {
+    return deg * (Math.PI / 180)
 }
 
 function distance(lat1, lng1, lat2, lng2) {
-
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2 - lat1);  // deg2rad below
+    var dLng = deg2rad(lng2 - lng1);
+    var a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2)
+        ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return d;
 }
 
-const users =     
-}
+const users = [{
+    "user1": {
+        "name": "Brenda",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user2": {
+        "name": "Conner",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user3": {
+        "name": "Sasha",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user4": {
+        "name": "Jennifer",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user5": {
+        "name": "Eric",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    },
+    "user6": {
+        "name": "Frank",
+        "location": [-100.23123, -100.12312],
+        "cuisine": ["italian", "japanese", "greek"],
+        "preference": ["vegan", "peanut-free"],
+        "experience": [3],
+        "utensils": [3]
+    }
+}]
+
+const publicLoc = [{
+    "park1": [42.98880464048201, -81.24839858642186],
+    "park2": [42.99749880123185, -81.18325884411269],
+    "park3": [42.962355561148826, -81.2970148882916],
+    "park4": [42.944211244171655, -81.25258957534575],
+    "park5": [42.98038275374684, -81.21529873061996],
+    "park6": [43.010250654832184, -81.27629123137179],
+}]
+
+
+console.log(users[0].user1.location[0]);
+
+
